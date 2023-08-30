@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Empresa.Models
 {
-    public class cliente
+    public sealed class cliente: EntidadeBase
     {
-        public int Id {  get; set; }
-        public string Nome { get; set; }
-        public string Email { get; set;}
-        public string Telefone { get; set;}
+
     }
 }
