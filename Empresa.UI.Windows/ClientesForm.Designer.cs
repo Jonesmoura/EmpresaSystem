@@ -100,6 +100,7 @@
             alterarButton.TabIndex = 1;
             alterarButton.Text = "Alterar";
             alterarButton.UseVisualStyleBackColor = true;
+            alterarButton.Click += alterarButton_Click;
             // 
             // ExcluirButton
             // 
@@ -109,6 +110,7 @@
             ExcluirButton.TabIndex = 2;
             ExcluirButton.Text = "Excluir";
             ExcluirButton.UseVisualStyleBackColor = true;
+            ExcluirButton.Click += ExcluirButton_Click;
             // 
             // SairButton
             // 
@@ -118,6 +120,7 @@
             SairButton.TabIndex = 3;
             SairButton.Text = "Sair";
             SairButton.UseVisualStyleBackColor = true;
+            SairButton.Click += SairButton_Click;
             // 
             // ConfirmarIncluirButton
             // 
@@ -137,6 +140,7 @@
             ConfirmarAlterarButton.TabIndex = 5;
             ConfirmarAlterarButton.Text = "Alterar";
             ConfirmarAlterarButton.UseVisualStyleBackColor = true;
+            ConfirmarAlterarButton.Click += ConfirmarAlterarButton_Click;
             // 
             // ConfirmarExcluirButton
             // 
@@ -146,6 +150,7 @@
             ConfirmarExcluirButton.TabIndex = 6;
             ConfirmarExcluirButton.Text = "Confirmar Exclusão";
             ConfirmarExcluirButton.UseVisualStyleBackColor = true;
+            ConfirmarExcluirButton.Click += ConfirmarExcluirButton_Click;
             // 
             // VoltarButton
             // 

@@ -56,6 +56,9 @@ namespace Empresa.UI.Windows
         private void novoButton_Click(object sender, EventArgs e)
         {
             ExibirFicha();
+            ConfirmarAlterarButton.Visible = false;
+            ConfirmarExcluirButton.Visible = false;
+            ConfirmarIncluirButton.Visible = true;
             LimparFicha();
         }
 
@@ -103,6 +106,69 @@ namespace Empresa.UI.Windows
 
             ExibirGrid();
 
+        }
+
+        private void alterarButton_Click(object sender, EventArgs e)
+        {
+            var cliente = (cliente)listaDataGridView.CurrentRow.DataBoundItem;
+            idTextBox.Text = cliente.Id.ToString();
+            nomeTextBox.Text = cliente.Nome;
+            emailTextBox.Text = cliente.Email;
+            telTextBox.Text = cliente.Telefone;
+            ExibirFicha();
+
+            ConfirmarAlterarButton.Visible = true;
+            ConfirmarExcluirButton.Visible = false;
+            ConfirmarIncluirButton.Visible = false;
+
+        }
+
+        private void ConfirmarAlterarButton_Click(object sender, EventArgs e)
+        {
+            var cliente = new cliente();
+            cliente.Id = Convert.ToInt32(idTextBox.Text);
+            cliente.Nome = nomeTextBox.Text;
+            cliente.Email = emailTextBox.Text;
+            cliente.Telefone = telTextBox.Text;
+
+            var db = new ClienteDB();
+            db.Alterar(cliente);
+
+            ExibirGrid();
+
+        }
+
+        private void ExcluirButton_Click(object sender, EventArgs e)
+        {
+            var cliente = (cliente)listaDataGridView.CurrentRow.DataBoundItem;
+            idTextBox.Text = cliente.Id.ToString();
+            nomeTextBox.Text = cliente.Nome;
+            emailTextBox.Text = cliente.Email;
+            telTextBox.Text = cliente.Telefone;
+            ExibirFicha();
+
+            ConfirmarAlterarButton.Visible = false;
+            ConfirmarExcluirButton.Visible = true;
+            ConfirmarIncluirButton.Visible = false;
+        }
+
+        private void ConfirmarExcluirButton_Click(object sender, EventArgs e)
+        {
+            var cliente = new cliente();
+            cliente.Id = Convert.ToInt32(idTextBox.Text);
+            cliente.Nome = nomeTextBox.Text;
+            cliente.Email = emailTextBox.Text;
+            cliente.Telefone = telTextBox.Text;
+
+            var db = new ClienteDB();
+            db.Excluir(cliente.Id);
+
+            ExibirGrid();
+        }
+
+        private void SairButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
