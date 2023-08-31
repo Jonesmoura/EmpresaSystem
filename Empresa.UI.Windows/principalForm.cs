@@ -9,5 +9,13 @@ namespace Empresa.UI.Windows
             clienteIncluirForm form = new clienteIncluirForm();
             form.ShowDialog();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new ClientesForm();
+            f.ShowDialog();
+
+
+        }
     }
 }

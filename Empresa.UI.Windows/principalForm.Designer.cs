@@ -31,7 +31,6 @@
             menuStrip1 = new MenuStrip();
             aToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
-            novoClienteToolStripMenuItem = new ToolStripMenuItem();
             orçamentosToolStripMenuItem = new ToolStripMenuItem();
             fornecedoresToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
@@ -57,17 +56,10 @@
             // 
             // clientesToolStripMenuItem
             // 
-            clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoClienteToolStripMenuItem });
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             clientesToolStripMenuItem.Size = new Size(180, 22);
             clientesToolStripMenuItem.Text = "Clientes";
-            // 
-            // novoClienteToolStripMenuItem
-            // 
-            novoClienteToolStripMenuItem.Name = "novoClienteToolStripMenuItem";
-            novoClienteToolStripMenuItem.Size = new Size(180, 22);
-            novoClienteToolStripMenuItem.Text = "Novo Cliente";
-            novoClienteToolStripMenuItem.Click += novoClienteToolStripMenuItem_Click_1;
+            clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // orçamentosToolStripMenuItem
             // 
@@ -112,7 +104,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem aToolStripMenuItem;
         private ToolStripMenuItem clientesToolStripMenuItem;
-        private ToolStripMenuItem novoClienteToolStripMenuItem;
         private ToolStripMenuItem orçamentosToolStripMenuItem;
         private ToolStripMenuItem fornecedoresToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem1;

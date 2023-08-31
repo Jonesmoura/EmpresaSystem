@@ -52,7 +52,7 @@ namespace Empresa.DB
         {
             string sql = "SELECT Id, Nome, Telefone, Email FROM Cliente";
             var cn = new SqlConnection(DB.Connection);
-            var cmd = new SqlCommand(sql);
+            var cmd = new SqlCommand(sql, cn);
 
             List<cliente> lista = new List<cliente>();
             cn.Open();
