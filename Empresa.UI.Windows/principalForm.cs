@@ -17,5 +17,11 @@ namespace Empresa.UI.Windows
 
 
         }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var fornecedor = new FornecedorForm();
+            fornecedor.ShowDialog();
+        }
     }
 }

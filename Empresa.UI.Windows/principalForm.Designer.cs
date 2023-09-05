@@ -72,6 +72,7 @@
             fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
             fornecedoresToolStripMenuItem.Size = new Size(180, 22);
             fornecedoresToolStripMenuItem.Text = "Fornecedores";
+            fornecedoresToolStripMenuItem.Click += fornecedoresToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
