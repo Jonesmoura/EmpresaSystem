@@ -1,11 +1,12 @@
 ﻿@model Empresa.Models.cliente
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Delete";
 }
 
-<h1>Detalhes do Cliente</h1>
+<h1>Excluir</h1>
 
+<h3>Confirma a exclusão?</h3>
 <div>
     <h4>cliente</h4>
     <hr />
@@ -35,8 +36,9 @@
             @Html.DisplayFor(model => model.Telefone)
         </dd>
     </dl>
-</div>
-<div>
-    @Html.ActionLink("Alterar", "Edit", new { id = Model.Id }) |
-    <a asp-action="Index">Voltar</a>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Excluir" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>
 </div>

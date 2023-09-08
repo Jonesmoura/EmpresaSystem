@@ -32,52 +32,63 @@ namespace Empresa.UI.Web.Controllers
         // POST: ClienteController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(cliente cliente)
         {
             try
             {
+                var db = new ClienteDB();
+                db.Incluir(cliente);
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View(cliente);
             }
         }
 
         // GET: ClienteController/Edit/5
         public ActionResult Edit(int id)
         {
+            var db = new ClienteDB();
+            var cliente = db.ObterPorId(id); 
             return View();
         }
 
         // POST: ClienteController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, cliente cliente)
         {
             try
             {
+                var db = new ClienteDB();
+                db.Alterar(cliente);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View(cliente);
             }
         }
 
         // GET: ClienteController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var db = new ClienteDB();   
+            var cliente = db.ObterPorId(id);
+            return View(cliente);
         }
 
         // POST: ClienteController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, cliente cliente)
         {
             try
             {
+                var db = new ClienteDB();
+                db.Excluir(id);
                 return RedirectToAction(nameof(Index));
             }
             catch
